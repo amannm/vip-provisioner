@@ -11,6 +11,10 @@ func main() {
 }
 
 func doMain() int {
-	fmt.Printf("Hello World\n")
+	err := printRequest()
+	if err != nil {
+		_, _ = fmt.Fprintf(os.Stderr, "error: %s", err)
+		return 1
+	}
 	return 0
 }
