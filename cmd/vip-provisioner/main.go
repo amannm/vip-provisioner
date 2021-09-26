@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"vip-provisioner/internal"
 )
 
 func main() {
@@ -11,7 +12,7 @@ func main() {
 }
 
 func doMain() int {
-	err := printRequest()
+	err := internal.Provision()
 	if err != nil {
 		_, _ = fmt.Fprintf(os.Stderr, "error: %s", err)
 		return 1
